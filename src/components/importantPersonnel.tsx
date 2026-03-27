@@ -103,6 +103,7 @@ const ImportantPersonnel: React.FC = () => {
     <div
       ref={sectionRef}
       className="
+        hidden md:block
         relative w-full pt-4 pb-10 md:pt-6 md:pb-14 text-black font-family-helvetica z-30
         -mt-32 md:-mt-48 bg-white rounded-t-[30px] md:rounded-t-[50px] shadow-[0_-10px_40px_rgba(0,0,0,0.12)]
         will-change-transform

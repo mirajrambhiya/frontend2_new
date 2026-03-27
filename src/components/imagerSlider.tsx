@@ -159,7 +159,8 @@ const ImageSlider = () => {
                   src={src}
                   alt={`Slider ${index}`}
                   className={`
-                    w-full h-[700px] block
+                    w-full h-auto md:h-[700px] md:object-cov
+          -er block
                     ${isActive ? getKenBurnsClass(index) : ''}
                   `}
                 />
