@@ -5,6 +5,10 @@
   --font-family-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+html {
+  zoom: 1.2;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -93,8 +97,94 @@ body {
   animation: kbZoomDown 6s ease-out forwards;
 }
 
+/* ===== Splash Screen ===== */
+
+/* --- Keyframes --- */
+@keyframes splashFadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splashLogoExit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes panelSlideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* --- Container --- */
+.splash-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* --- Logo Layer --- */
+.splash-logo-layer {
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+}
+
+.splash-logo {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  animation: splashFadeInScale 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@media (min-width: 768px) {
+  .splash-logo {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+.splash-logo-hidden {
+  animation: splashLogoExit 0.4s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+/* --- Single slide-up panel --- */
+.splash-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 9998;
+  background-color: #ffffff;
+  will-change: transform;
+}
+
+.splash-panel-exit {
+  animation: panelSlideUp 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
 /* Progress bar fill for slider dots */
 @keyframes progressFill {
   0% { width: 0%; }
   100% { width: 100%; }
-}
+}

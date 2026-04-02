@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from '@tanstack/react-router';
-const whatsnewbg = "/assets/whatsnewbg.svg";
 
 function WasteManagement() {
     const wasteTags = [
@@ -201,32 +200,21 @@ function WasteManagement() {
                 </div>
 
                 {/* What's New and Consent Status Grid */}
-                <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                <div className="flex flex-col md:flex-row gap-30 items-center md:items-start">
                     {/* What's New Card */}
                     <div className="w-full max-w-[350px] md:w-[260px] shrink-0 mx-auto md:mx-0">
-                        <div
-                            className="relative rounded-[16px] overflow-hidden h-[320px]"
-                            style={{
-                                backgroundImage: `url(${whatsnewbg})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                                backgroundRepeat: 'no-repeat'
-                            }}
-                        >
+                        <div className="relative rounded-[20px] overflow-hidden flex flex-col bg-cover bg-center h-[420px]" style={{ backgroundImage: "url('/assets/whatsnewcard.png')" }}>
                             {/* Header */}
-                            <div className="px-5 pt-5 pb-2">
+                            <div className="px-5 pt-6 pb-2 shrink-0">
                                 <h3 className="text-white text-[24px] md:text-[28px] font-bold leading-tight">What&rsquo;s New</h3>
                                 <div className="h-[1px] bg-white/30 w-full mt-3"></div>
                             </div>
 
                             {/* Scrollable content area */}
-                            <div
-                                className="whats-new-scroll px-5 pb-4 space-y-6 overflow-y-auto"
-                                style={{ height: 'calc(100% - 75px)' }}
-                            >
+                            <div className="whats-new-scroll px-5 pb-14 space-y-4 overflow-y-auto flex-1 min-h-0">
                                 {whatsNewItems.map((item, index) => (
-                                    <div key={index}>
-                                        <p className="text-white text-[13px] leading-[1.6] font-medium opacity-90 cursor-pointer group">
+                                    <div key={index} className="group">
+                                        <p className="text-white text-[13px] leading-[1.6] font-medium opacity-90 hover:opacity-100">
                                             <span className="group-hover:underline transition-all decoration-white/80 underline-offset-2">{item.text}</span>
                                             {item.isNew && (
                                                 <span className="ml-2 inline-flex align-middle">
@@ -236,9 +224,18 @@ function WasteManagement() {
                                         </p>
                                     </div>
                                 ))}
-                                <div className="h-[20px]"></div>
                             </div>
 
+                            {/* View All button — pinned at bottom */}
+                            <div className="shrink-0 px-5 pb-5 pt-2 bg-gradient-to-t from-[#0052CC]/60 via-[#1A6FFF]/30 to-transparent">
+                                <a
+                                    href="/whats-new"
+                                    className="flex items-center justify-center gap-1.5 w-full py-2.5 text-[13px] font-semibold text-white bg-white/15 border border-white/40 rounded-[10px] hover:bg-white/30 transition-all duration-200 backdrop-blur-sm"
+                                >
+                                    View All
+                                    <span className="text-[15px]">→</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 

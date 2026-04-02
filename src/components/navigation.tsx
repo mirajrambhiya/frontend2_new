@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 const translate = "/assets/translate.png";
 const down_arrow = "/assets/downarrow.png";
 
-import mpcblogonew from "/assets/mpcblogonew.jpg";
+import mpcblogonew from "/assets/mpcblogofinalnew.png";
 const down_arrow_black = "/assets/blackdownarrow.svg";
 import { useNavigate, Link } from '@tanstack/react-router';
 import { useLanguage } from '../context/LanguageContext';
@@ -486,7 +486,7 @@ function NavBar() {
                 <div className="container mx-auto md:mr-[80px] md:ml-[80px] flex items-center justify-between">
                     {/* Logo Section */}
                     <Link to="/" className='flex items-center shrink-0 gap-2'>
-                        <img src={mpcblogonew} alt="mpcb logo" className='w-[140px] md:w-[250px] h-auto' />
+                        <img src={mpcblogonew} alt="mpcb logo" className='w-[250px] md:w-[350px] h-auto' />
                     </Link>
 
                     {/* Desktop Navigation - Hidden on Mobile */}
